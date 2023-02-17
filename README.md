@@ -1,13 +1,9 @@
-
-
-
-!!!!! THE SCRIPT WILL BE UPLOADED LATER TODAY !!!!!!
-
-
 # RemoteDellBIOSConfiguration
 A PowerShell module to view and change BIOS settings on remote Dell computers 
 
 This module will copy the DellCommand PowerShellProvider temporary to the target machine and use that to get og set configurations attributes on the target computer's BIOS. When function it compleate the module will automaticly be removed from the target (if the module did not exist there in the first place).
+
+For more information about how this works check out my blog post: https://flemmingss.com/view-and-change-bios-settings-on-remote-dell-computers-using-powershell/
 
 **The Process**
 1. Copy "DellCommand PowerShellProvider" to target computer if it is not existing.
@@ -36,8 +32,7 @@ function Set-DellBIOSProviderPaths ($ComputerName)
 **Functions**
 
 ```powershell
-Find-DhcpServerv4ScopeID -ComputerName <dhcp server> (optional) -IPaddress <ip> -Details (optional)
-Set-DellBIOSProviderPaths -ComputerName <name of target computer>
+Get-DellBIOSConfigurationAttributes -ComputerName <name of target computer>
 Set-DellBIOSConfigurationAttribute -ComputerName <name of target computer> -BIOSPassword <BIOS password> -Category <BIOS Category (PSChildName)> -Attribute <BIOS Attribute> -Value <New value for BIOS Attribute>
 
 ```
