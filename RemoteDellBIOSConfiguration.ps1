@@ -16,8 +16,6 @@
   https://flemmingss.com/
 #>
 
-# Av FLESKA
-
 function Set-DellBIOSProviderPaths ($ComputerName)
 {
     $ErrorActionPreference = "Stop"
